@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+
+    padding: 1rem;
+    background-color: #010032;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-image {
+    height:101px; /* Justera höjden efter behov */
+    
+    
+}
+
+.site-title {
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 1.5rem; /* Justera storleken efter behov */
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    max-width: 60%;
+}
+
+.intro-image {
+    flex-shrink: 0;
+    margin-left: 2rem;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover; /* Ser till att bilden fyller ut container utan att förvrängas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3)
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end; /* Justera placeringen av navigeringen på små skärmar */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+
+main {
+    padding: 2rem;
+    max-width: 1200px; /* Sätter en maxbredd */
+    margin: 0 auto;
+    margin-bottom: 4rem;
+
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img, .grid-item video {
+    width: 100%;
+    height: auto; /* Håller proportionerna */
+    max-height: 400px; /* Justera maxhöjden för att hålla enhetlig storlek */
+    object-fit: contain; /* Ser till att bilderna fyller ut container utan att förvrängas */
+    margin-bottom: 1rem; 
+}
+
+h1  {text-align: center;
+padding-bottom: 3rem;}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.menu-toggle {
+    display: none;
+}
+
+/* Media Queries för mobilanpassning */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Göm menyn som standard */
+    }
+
+    .nav-menu.show {
+        display: flex; /* Visa menyn när knappen klickas */
+    }
+
+    .menu-toggle {
+        display: block; /* Visa knappen på små skärmar */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .intro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-text {
+        text-align: center;
+    }
+
+
+    .intro-image {
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    form {
+        width: 90%;
+    }
+}
